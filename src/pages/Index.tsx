@@ -485,11 +485,11 @@ const Index = () => {
               return (
                 <article
                   key={l.cidade}
-                  className={`card-hover bg-card border border-border p-8 relative overflow-hidden`}
+                  className={`${isBlue ? "card-hover-blue border-brand-blue-glow/60" : "card-hover border-border"} bg-card border p-8 relative overflow-hidden`}
                 >
                   <div className={`absolute top-0 left-0 right-0 h-1 ${accentBg}`} />
                   <div
-                    className={`absolute -top-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-30 ${accentBg}`}
+                    className={`absolute -top-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-20 ${accentBg}`}
                     aria-hidden
                   />
                   <span className={`text-xs font-bold uppercase tracking-widest ${accentText} relative`}>

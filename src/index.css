@@ -65,7 +65,8 @@
     --shadow-elegant: 0 25px 60px -20px hsl(358 55% 50% / 0.3);
     --shadow-card: 0 20px 50px -20px hsl(0 0% 0% / 0.8);
     --shadow-glow: 0 0 40px hsl(358 60% 55% / 0.3);
-    --shadow-blue: 0 0 60px #2e509e8c;
+    --shadow-blue: 0 0 40px hsl(222 55% 40% / 0.3);
+    --shadow-blue-elegant: 0 25px 60px -20px hsl(222 55% 40% / 0.3);
 
     --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -125,6 +126,14 @@
     transform: translateY(-4px);
     border-color: hsl(var(--primary) / 0.7);
     box-shadow: var(--shadow-elegant);
+  }
+  .card-hover-blue {
+    transition: var(--transition-smooth);
+  }
+  .card-hover-blue:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--brand-blue-glow));
+    box-shadow: var(--shadow-blue-elegant);
   }
   .marquee {
     display: flex;
