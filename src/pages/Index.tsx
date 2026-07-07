@@ -211,15 +211,15 @@ const Index = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-6 bg-primary/25 blur-3xl rounded-full" aria-hidden />
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-blue-glow/30 blur-3xl rounded-full" aria-hidden />
+            <div className="absolute -inset-6 bg-primary/12 blur-3xl rounded-full" aria-hidden />
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-blue-glow/20 blur-3xl rounded-full" aria-hidden />
             <img
               src="https://imagens-prod.microwork.inf.br/modelos/65/versoes/138/versao.png?v=20260429"
               alt="Honda Hornet 750"
               fetchPriority="high"
-              className="relative w-full max-w-2xl mx-auto drop-shadow-[0_25px_45px_rgba(193,37,42,0.4)]"
+              className="relative w-full max-w-2xl mx-auto drop-shadow-[0_25px_45px_rgba(193,37,42,0.2)]"
             />
-            <div className="absolute bottom-8 left-4 bg-primary text-primary-foreground px-4 py-2 font-display text-sm tracking-widest -rotate-3 shadow-[var(--shadow-glow)]">
+            <div className="absolute bottom-8 left-4 bg-primary/80 text-primary-foreground px-4 py-2 font-display text-sm tracking-widest -rotate-3 shadow-[0_4px_12px_rgba(193,37,42,0.2)]">
               Hornet 750
             </div>
             <div className="absolute top-8 right-4 bg-brand-blue text-white px-4 py-2 font-display text-xs tracking-widest rotate-3 border border-brand-blue-glow">
