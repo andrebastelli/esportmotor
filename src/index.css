@@ -13,9 +13,9 @@
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 358 66% 45%;
+    --primary: 358 55% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 358 75% 58%;
+    --primary-glow: 358 60% 55%;
 
     --brand-blue: 222 44% 25%;
     --brand-blue-glow: 222 55% 40%;
@@ -62,10 +62,11 @@
       hsl(var(--primary-glow)) 100%
     );
 
-    --shadow-elegant: 0 25px 60px -20px hsl(358 66% 45% / 0.5);
+    --shadow-elegant: 0 25px 60px -20px hsl(358 55% 50% / 0.3);
     --shadow-card: 0 20px 50px -20px hsl(0 0% 0% / 0.8);
-    --shadow-glow: 0 0 60px hsl(358 75% 55% / 0.5);
-    --shadow-blue: 0 0 60px hsl(222 55% 40% / 0.55);
+    --shadow-glow: 0 0 40px hsl(358 60% 55% / 0.3);
+    --shadow-blue: 0 0 40px hsl(222 55% 40% / 0.3);
+    --shadow-blue-elegant: 0 25px 60px -20px hsl(222 55% 40% / 0.3);
 
     --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -125,6 +126,14 @@
     transform: translateY(-4px);
     border-color: hsl(var(--primary) / 0.7);
     box-shadow: var(--shadow-elegant);
+  }
+  .card-hover-blue {
+    transition: var(--transition-smooth);
+  }
+  .card-hover-blue:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--brand-blue-glow));
+    box-shadow: var(--shadow-blue-elegant);
   }
   .marquee {
     display: flex;

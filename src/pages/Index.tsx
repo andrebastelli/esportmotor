@@ -12,7 +12,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import esportLogo from "@/assets/logo-esport-motor.png";
-import hondaLogo from "@/assets/honda-logo.svg";
 
 const WA_MAIN = "551938647080";
 const WA_RC = "551935229200";
@@ -120,11 +119,18 @@ const Index = () => {
       {/* Header */}
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
         <div className="container flex items-center justify-between h-20">
-          <Logos />
-          <nav
-            aria-label="Navegação"
-            className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider"
-          >
+    <a
+      href="#"
+      aria-label="Ir para o topo da página"
+      className="flex items-center"
+    >
+      <Logos />
+    </a>
+
+    <nav
+      aria-label="Navegação"
+      className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider"
+    >
             <a href="#beneficios" className="hover:text-primary transition-colors">
               Benefícios
             </a>
@@ -211,15 +217,15 @@ const Index = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-6 bg-primary/25 blur-3xl rounded-full" aria-hidden />
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-blue-glow/30 blur-3xl rounded-full" aria-hidden />
+            <div className="absolute -inset-6 bg-primary/12 blur-3xl rounded-full" aria-hidden />
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-blue-glow/20 blur-3xl rounded-full" aria-hidden />
             <img
               src="https://imagens-prod.microwork.inf.br/modelos/65/versoes/138/versao.png?v=20260429"
               alt="Honda Hornet 750"
               fetchPriority="high"
-              className="relative w-full max-w-2xl mx-auto drop-shadow-[0_25px_45px_rgba(193,37,42,0.4)]"
+              className="relative w-full max-w-2xl mx-auto drop-shadow-[0_25px_45px_rgba(193,37,42,0.2)]"
             />
-            <div className="absolute bottom-8 left-4 bg-primary text-primary-foreground px-4 py-2 font-display text-sm tracking-widest -rotate-3 shadow-[var(--shadow-glow)]">
+            <div className="absolute bottom-8 left-4 bg-primary/80 text-primary-foreground px-4 py-2 font-display text-sm tracking-widest -rotate-3 shadow-[0_4px_12px_rgba(193,37,42,0.2)]">
               Hornet 750
             </div>
             <div className="absolute top-8 right-4 bg-brand-blue text-white px-4 py-2 font-display text-xs tracking-widest rotate-3 border border-brand-blue-glow">
@@ -485,11 +491,11 @@ const Index = () => {
               return (
                 <article
                   key={l.cidade}
-                  className={`card-hover bg-card border border-border p-8 relative overflow-hidden`}
+                  className={`${isBlue ? "card-hover-blue border-brand-blue-glow/60" : "card-hover border-border"} bg-card border p-8 relative overflow-hidden`}
                 >
                   <div className={`absolute top-0 left-0 right-0 h-1 ${accentBg}`} />
                   <div
-                    className={`absolute -top-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-30 ${accentBg}`}
+                    className={`absolute -top-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-20 ${accentBg}`}
                     aria-hidden
                   />
                   <span className={`text-xs font-bold uppercase tracking-widest ${accentText} relative`}>
