@@ -12,7 +12,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import esportLogo from "@/assets/logo-esport-motor.png";
-import hondaLogo from "@/assets/honda-logo.svg";
 
 const WA_MAIN = "551938647080";
 const WA_RC = "551935229200";
@@ -120,11 +119,18 @@ const Index = () => {
       {/* Header */}
       <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
         <div className="container flex items-center justify-between h-20">
-          <Logos />
-          <nav
-            aria-label="Navegação"
-            className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider"
-          >
+    <a
+      href="#"
+      aria-label="Ir para o topo da página"
+      className="flex items-center"
+    >
+      <Logos />
+    </a>
+
+    <nav
+      aria-label="Navegação"
+      className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider"
+    >
             <a href="#beneficios" className="hover:text-primary transition-colors">
               Benefícios
             </a>
