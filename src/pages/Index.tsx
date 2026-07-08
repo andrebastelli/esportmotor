@@ -272,7 +272,12 @@ const Index = () => {
             return (
               <article
                 key={b.n}
-                className={`card-hover bg-card border p-6 relative ${isBlue ? "border-brand-blue-glow/40" : "border-border"}`}
+                className={`${isBlue ? "card-hover-blue" : "card-hover"} bg-card border p-6 relative ${isBlue ? "border-brand-blue-glow/40" : "border-border"}`}
+                style={
+                  isBlue
+                    ? { boxShadow: "0 0 30px hsl(222 55% 40% / 0.15)" }
+                    : { boxShadow: "0 0 30px hsl(358 55% 50% / 0.15)" }
+                }
               >
                 <div
                   className={`absolute top-4 right-4 font-display text-5xl ${isBlue ? "text-brand-blue-glow/25" : "text-primary/15"}`}
