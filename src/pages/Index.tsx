@@ -311,12 +311,12 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {motos.map((m, i) => {
               const tagColor = i % 3 === 0 ? "primary" : i % 3 === 1 ? "blue" : "white";
-            return (
-              <article
-                key={m.nome}
-                className="card-hover bg-card border overflow-hidden group relative border-border"
-              >
-                <span
+              return (
+                <article
+                  key={m.nome}
+                  className="card-hover bg-card border overflow-hidden group relative border-border"
+                >
+                  <span
                     className={`absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
                       i % 3 === 0
                         ? "bg-primary text-primary-foreground"
