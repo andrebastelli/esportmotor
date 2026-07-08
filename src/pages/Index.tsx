@@ -272,12 +272,7 @@ const Index = () => {
             return (
               <article
                 key={b.n}
-                className={`${isBlue ? "card-hover-blue" : "card-hover"} bg-card border p-6 relative ${isBlue ? "border-brand-blue-glow/40" : "border-border"}`}
-                style={
-                  isBlue
-                    ? { boxShadow: "0 0 30px hsl(222 55% 40% / 0.15)" }
-                    : { boxShadow: "0 0 30px hsl(358 55% 50% / 0.15)" }
-                }
+                className="card-hover bg-card border p-6 relative border-border"
               >
                 <div
                   className={`absolute top-4 right-4 font-display text-5xl ${isBlue ? "text-brand-blue-glow/25" : "text-primary/15"}`}
@@ -316,25 +311,12 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {motos.map((m, i) => {
               const tagColor = i % 3 === 0 ? "primary" : i % 3 === 1 ? "blue" : "white";
-              return (
-                <article
-                  key={m.nome}
-                  className={`card-hover bg-card border overflow-hidden group relative ${
-                    tagColor === "primary"
-                      ? "border-primary/60"
-                      : tagColor === "blue"
-                      ? "border-brand-blue-glow/60"
-                      : "border-white/60"
-                  }`}
-                  style={
-                    tagColor === "primary"
-                      ? { boxShadow: "0 0 30px hsl(358 55% 50% / 0.2)" }
-                      : tagColor === "blue"
-                      ? { boxShadow: "0 0 30px hsl(222 55% 40% / 0.2)" }
-                      : { boxShadow: "0 0 30px hsl(0 0% 100% / 0.15)" }
-                  }
-                >
-                  <span
+            return (
+              <article
+                key={m.nome}
+                className="card-hover bg-card border overflow-hidden group relative border-border"
+              >
+                <span
                     className={`absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
                       i % 3 === 0
                         ? "bg-primary text-primary-foreground"
@@ -348,13 +330,7 @@ const Index = () => {
                   <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-background to-secondary/60 flex items-center justify-center p-4 overflow-hidden relative">
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
-                      style={
-                        tagColor === "primary"
-                          ? { background: "radial-gradient(circle_at_center,hsl(358 55% 50% / 0.2),transparent 60%)" }
-                          : tagColor === "blue"
-                          ? { background: "radial-gradient(circle_at_center,hsl(222 55% 40% / 0.2),transparent 60%)" }
-                          : { background: "radial-gradient(circle_at_center,hsl(0 0% 100% / 0.1),transparent 60%)" }
-                      }
+                      style={{ background: "radial-gradient(circle_at_center,hsl(358 55% 50% / 0.2),transparent 60%)" }}
                     />
                     <img
                       src={m.img}
@@ -375,13 +351,7 @@ const Index = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Simular ${m.nome}`}
-                      className={`w-10 h-10 flex items-center justify-center border transition-colors ${
-                        tagColor === "primary"
-                          ? "border-border text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
-                          : tagColor === "blue"
-                          ? "border-border text-muted-foreground group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue"
-                          : "border-border text-muted-foreground group-hover:bg-white group-hover:text-background group-hover:border-white"
-                      }`}
+                      className="w-10 h-10 flex items-center justify-center border border-border text-muted-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
                     >
                       <ArrowRight className="w-4 h-4" />
                     </a>
