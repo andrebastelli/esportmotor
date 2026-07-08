@@ -21,42 +21,42 @@ const motos = [
   {
     nome: "CG 160 Start",
     cat: "Street",
-    img: "https://imagens-prod.microwork.inf.br/modelos/12/versoes/28/versao.png?v=20260429",
+    img: "/CG_160_Start.webp",
   },
   {
     nome: "Biz 125 ES",
     cat: "Urban",
-    img: "https://imagens-prod.microwork.inf.br/modelos/10/versoes/121/versao.png?v=20260429",
+    img: "/Biz_125_ES.webp",
   },
   {
     nome: "CB 1000R",
     cat: "Naked",
-    img: "https://imagens-prod.microwork.inf.br/modelos/23/versoes/45/versao.png?v=20260429",
+    img: "/CB_1000R.webp",
   },
   {
     nome: "CB 300F Twister",
     cat: "Street",
-    img: "https://imagens-prod.microwork.inf.br/modelos/53/versoes/106/versao.png?v=20260429",
+    img: "/CB_300F_Twister.webp",
   },
   {
     nome: "Hornet 750",
     cat: "Naked",
-    img: "https://imagens-prod.microwork.inf.br/modelos/65/versoes/138/versao.png?v=20260429",
+    img: "/Hornet_750.webp",
   },
   {
     nome: "Honda ADV",
     cat: "Adventure",
-    img: "https://imagens-prod.microwork.inf.br/modelos/56/versoes/111/versao.png?v=20260429",
+    img: "/Honda_ADV.webp",
   },
   {
     nome: "CRF 1100L Africa Twin",
     cat: "Adventure",
-    img: "https://imagens-prod.microwork.inf.br/modelos/66/versoes/139/versao.png?v=20260429",
+    img: "CRF_1100L_Africa_Twin.webp",
   },
   {
     nome: "XRE 190",
     cat: "Trail",
-    img: "https://imagens-prod.microwork.inf.br/modelos/25/versoes/47/versao.png?v=20260429",
+    img: "/XRE_190.webp",
   },
 ];
 
@@ -89,7 +89,7 @@ const beneficios = [
 
 const Logos = () => (
   <div className="flex items-center gap-3">
-    <img src={esportLogo} alt="Esport Motor" className="h-10 w-auto" />
+    <img src={esportLogo} alt="Esport Motor" className="h-10 w-auto" width={120} height={40} />
     <span className="h-8 w-px bg-border" />
   </div>
 );
@@ -224,6 +224,8 @@ const Index = () => {
               alt="Honda Hornet 750"
               fetchPriority="high"
               className="relative w-full max-w-2xl mx-auto drop-shadow-[0_25px_45px_rgba(193,37,42,0.2)]"
+              width={800}
+              height={600}
             />
             <div className="absolute bottom-8 left-4 bg-primary/80 text-primary-foreground px-4 py-2 font-display text-sm tracking-widest -rotate-3 shadow-[0_4px_12px_rgba(193,37,42,0.2)]">
               Hornet 750
@@ -272,7 +274,7 @@ const Index = () => {
             return (
               <article
                 key={b.n}
-                className={`card-hover bg-card border p-6 relative ${isBlue ? "border-brand-blue-glow/40" : "border-border"}`}
+                className={`${isBlue ? "card-hover-blue" : "card-hover"} bg-card border p-6 relative border-border`}
               >
                 <div
                   className={`absolute top-4 right-4 font-display text-5xl ${isBlue ? "text-brand-blue-glow/25" : "text-primary/15"}`}
@@ -309,50 +311,77 @@ const Index = () => {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {motos.map((m, i) => (
-              <article
-                key={m.nome}
-                className="card-hover bg-card border border-border overflow-hidden group relative"
-              >
-                <span
-                  className={`absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
-                    i % 3 === 0
-                      ? "bg-primary text-primary-foreground"
-                      : i % 3 === 1
-                      ? "bg-brand-blue text-white"
-                      : "bg-white text-background"
-                  }`}
+            {motos.map((m, i) => {
+              const tagColor = i % 3 === 0 ? "primary" : i % 3 === 1 ? "blue" : "white";
+              return (
+                <article
+                  key={m.nome}
+                  className={`${
+                    tagColor === "primary"
+                      ? "card-hover"
+                      : tagColor === "blue"
+                      ? "card-hover-blue"
+                      : "card-hover-white"
+                  } bg-card border overflow-hidden group relative border-border`}
                 >
-                  {m.cat}
-                </span>
-                <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-background to-secondary/60 flex items-center justify-center p-4 overflow-hidden relative">
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.25),transparent_60%)]" />
-                  <img
-                    src={m.img}
-                    alt={m.nome}
-                    loading="lazy"
-                    className="relative w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5 border-t border-border flex items-center justify-between">
-                  <div>
-                    <h3 className="font-display text-lg leading-tight">{m.nome}</h3>
-                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Consórcio Honda</span>
-                  </div>
-                  <a
-                    href={`https://api.whatsapp.com/send?phone=${WA_MAIN}&text=${encodeURIComponent(
-                      `Olá! Quero simular o consórcio da ${m.nome}.`,
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Simular ${m.nome}`}
-                    className="w-10 h-10 flex items-center justify-center border border-border text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors"
+                  <span
+                    className={`absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
+                      i % 3 === 0
+                        ? "bg-primary text-primary-foreground"
+                        : i % 3 === 1
+                        ? "bg-brand-blue text-white"
+                        : "bg-white text-background"
+                    }`}
                   >
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </article>
-            ))}
+                    {m.cat}
+                  </span>
+                  <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-background to-secondary/60 flex items-center justify-center p-4 overflow-hidden relative">
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
+                      style={{
+                        background:
+                          tagColor === "primary"
+                            ? "radial-gradient(circle_at_center,hsl(358 55% 50% / 0.2),transparent 60%)"
+                            : tagColor === "blue"
+                            ? "radial-gradient(circle_at_center,hsl(222 55% 40% / 0.2),transparent 60%)"
+                            : "radial-gradient(circle_at_center,hsl(0 0% 100% / 0.1),transparent 60%)",
+                      }}
+                    />
+                    <img
+                      src={m.img}
+                      alt={m.nome}
+                      loading="lazy"
+                      className="relative w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                      width={400}
+                      height={300}
+                    />
+                  </div>
+                  <div className="p-5 border-t border-border flex items-center justify-between">
+                    <div>
+                      <h3 className="font-display text-lg leading-tight">{m.nome}</h3>
+                      <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Consórcio Honda</span>
+                    </div>
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=${WA_MAIN}&text=${encodeURIComponent(
+                        `Olá! Quero simular o consórcio da ${m.nome}.`,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Simular ${m.nome}`}
+                      className={`w-10 h-10 flex items-center justify-center border border-border text-muted-foreground transition-colors ${
+                        tagColor === "primary"
+                          ? "group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
+                          : tagColor === "blue"
+                          ? "group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue"
+                          : "group-hover:bg-white group-hover:text-background group-hover:border-white"
+                      }`}
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
           <p className="text-xs text-muted-foreground/70 mt-10 max-w-4xl leading-relaxed">
             *Os valores aqui divulgados podem ser alterados sem aviso prévio. *Valores com Seguro de Vida Prestamista
