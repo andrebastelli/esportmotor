@@ -21,42 +21,42 @@ const motos = [
   {
     nome: "CG 160 Start",
     cat: "Street",
-    img: "https://imagens-prod.microwork.inf.br/modelos/12/versoes/28/versao.png?v=20260429",
+    img: "/CG_160_Start.webp",
   },
   {
     nome: "Biz 125 ES",
     cat: "Urban",
-    img: "https://imagens-prod.microwork.inf.br/modelos/10/versoes/121/versao.png?v=20260429",
+    img: "/Biz_125_ES.webp",
   },
   {
     nome: "CB 1000R",
     cat: "Naked",
-    img: "https://imagens-prod.microwork.inf.br/modelos/23/versoes/45/versao.png?v=20260429",
+    img: "/CB_1000R.webp",
   },
   {
     nome: "CB 300F Twister",
     cat: "Street",
-    img: "https://imagens-prod.microwork.inf.br/modelos/53/versoes/106/versao.png?v=20260429",
+    img: "/CB_300F_Twister.webp",
   },
   {
     nome: "Hornet 750",
     cat: "Naked",
-    img: "https://imagens-prod.microwork.inf.br/modelos/65/versoes/138/versao.png?v=20260429",
+    img: "/Hornet_750.webp",
   },
   {
     nome: "Honda ADV",
     cat: "Adventure",
-    img: "https://imagens-prod.microwork.inf.br/modelos/56/versoes/111/versao.png?v=20260429",
+    img: "/Honda_ADV.webp",
   },
   {
     nome: "CRF 1100L Africa Twin",
     cat: "Adventure",
-    img: "https://imagens-prod.microwork.inf.br/modelos/66/versoes/139/versao.png?v=20260429",
+    img: "CRF_1100L_Africa_Twin.webp",
   },
   {
     nome: "XRE 190",
     cat: "Trail",
-    img: "https://imagens-prod.microwork.inf.br/modelos/25/versoes/47/versao.png?v=20260429",
+    img: "/XRE_190.webp",
   },
 ];
 
