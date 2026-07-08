@@ -274,7 +274,7 @@ const Index = () => {
             return (
               <article
                 key={b.n}
-                className="card-hover bg-card border p-6 relative border-border"
+                className={`${isBlue ? "card-hover-blue" : "card-hover"} bg-card border p-6 relative border-border`}
               >
                 <div
                   className={`absolute top-4 right-4 font-display text-5xl ${isBlue ? "text-brand-blue-glow/25" : "text-primary/15"}`}
