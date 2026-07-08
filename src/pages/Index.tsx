@@ -309,50 +309,81 @@ const Index = () => {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {motos.map((m, i) => (
-              <article
-                key={m.nome}
-                className="card-hover bg-card border border-border overflow-hidden group relative"
-              >
-                <span
-                  className={`absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
-                    i % 3 === 0
-                      ? "bg-primary text-primary-foreground"
-                      : i % 3 === 1
-                      ? "bg-brand-blue text-white"
-                      : "bg-white text-background"
+            {motos.map((m, i) => {
+              const tagColor = i % 3 === 0 ? "primary" : i % 3 === 1 ? "blue" : "white";
+              return (
+                <article
+                  key={m.nome}
+                  className={`card-hover bg-card border overflow-hidden group relative ${
+                    tagColor === "primary"
+                      ? "border-primary/60"
+                      : tagColor === "blue"
+                      ? "border-brand-blue-glow/60"
+                      : "border-white/60"
                   }`}
+                  style={
+                    tagColor === "primary"
+                      ? { boxShadow: "0 0 30px hsl(358 55% 50% / 0.2)" }
+                      : tagColor === "blue"
+                      ? { boxShadow: "0 0 30px hsl(222 55% 40% / 0.2)" }
+                      : { boxShadow: "0 0 30px hsl(0 0% 100% / 0.15)" }
+                  }
                 >
-                  {m.cat}
-                </span>
-                <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-background to-secondary/60 flex items-center justify-center p-4 overflow-hidden relative">
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.25),transparent_60%)]" />
-                  <img
-                    src={m.img}
-                    alt={m.nome}
-                    loading="lazy"
-                    className="relative w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5 border-t border-border flex items-center justify-between">
-                  <div>
-                    <h3 className="font-display text-lg leading-tight">{m.nome}</h3>
-                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Consórcio Honda</span>
-                  </div>
-                  <a
-                    href={`https://api.whatsapp.com/send?phone=${WA_MAIN}&text=${encodeURIComponent(
-                      `Olá! Quero simular o consórcio da ${m.nome}.`,
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Simular ${m.nome}`}
-                    className="w-10 h-10 flex items-center justify-center border border-border text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors"
+                  <span
+                    className={`absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
+                      i % 3 === 0
+                        ? "bg-primary text-primary-foreground"
+                        : i % 3 === 1
+                        ? "bg-brand-blue text-white"
+                        : "bg-white text-background"
+                    }`}
                   >
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </article>
-            ))}
+                    {m.cat}
+                  </span>
+                  <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-background to-secondary/60 flex items-center justify-center p-4 overflow-hidden relative">
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
+                      style={
+                        tagColor === "primary"
+                          ? { background: "radial-gradient(circle_at_center,hsl(358 55% 50% / 0.2),transparent 60%)" }
+                          : tagColor === "blue"
+                          ? { background: "radial-gradient(circle_at_center,hsl(222 55% 40% / 0.2),transparent 60%)" }
+                          : { background: "radial-gradient(circle_at_center,hsl(0 0% 100% / 0.1),transparent 60%)" }
+                      }
+                    />
+                    <img
+                      src={m.img}
+                      alt={m.nome}
+                      loading="lazy"
+                      className="relative w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-5 border-t border-border flex items-center justify-between">
+                    <div>
+                      <h3 className="font-display text-lg leading-tight">{m.nome}</h3>
+                      <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Consórcio Honda</span>
+                    </div>
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=${WA_MAIN}&text=${encodeURIComponent(
+                        `Olá! Quero simular o consórcio da ${m.nome}.`,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Simular ${m.nome}`}
+                      className={`w-10 h-10 flex items-center justify-center border transition-colors ${
+                        tagColor === "primary"
+                          ? "border-border text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
+                          : tagColor === "blue"
+                          ? "border-border text-muted-foreground group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue"
+                          : "border-border text-muted-foreground group-hover:bg-white group-hover:text-background group-hover:border-white"
+                      }`}
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
           <p className="text-xs text-muted-foreground/70 mt-10 max-w-4xl leading-relaxed">
             *Os valores aqui divulgados podem ser alterados sem aviso prévio. *Valores com Seguro de Vida Prestamista
