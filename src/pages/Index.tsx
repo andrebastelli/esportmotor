@@ -316,7 +316,13 @@ const Index = () => {
               return (
                 <article
                   key={m.nome}
-                  className="card-hover bg-card border overflow-hidden group relative border-border"
+                  className={`${
+                    tagColor === "primary"
+                      ? "card-hover"
+                      : tagColor === "blue"
+                      ? "card-hover-blue"
+                      : "card-hover-white"
+                  } bg-card border overflow-hidden group relative border-border`}
                 >
                   <span
                     className={`absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-widest px-2 py-1 ${
@@ -332,7 +338,14 @@ const Index = () => {
                   <div className="aspect-[4/3] bg-gradient-to-br from-secondary via-background to-secondary/60 flex items-center justify-center p-4 overflow-hidden relative">
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
-                      style={{ background: "radial-gradient(circle_at_center,hsl(358 55% 50% / 0.2),transparent 60%)" }}
+                      style={{
+                        background:
+                          tagColor === "primary"
+                            ? "radial-gradient(circle_at_center,hsl(358 55% 50% / 0.2),transparent 60%)"
+                            : tagColor === "blue"
+                            ? "radial-gradient(circle_at_center,hsl(222 55% 40% / 0.2),transparent 60%)"
+                            : "radial-gradient(circle_at_center,hsl(0 0% 100% / 0.1),transparent 60%)",
+                      }}
                     />
                     <img
                       src={m.img}
@@ -355,7 +368,13 @@ const Index = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Simular ${m.nome}`}
-                      className="w-10 h-10 flex items-center justify-center border border-border text-muted-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
+                      className={`w-10 h-10 flex items-center justify-center border border-border text-muted-foreground transition-colors ${
+                        tagColor === "primary"
+                          ? "group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
+                          : tagColor === "blue"
+                          ? "group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue"
+                          : "group-hover:bg-white group-hover:text-background group-hover:border-white"
+                      }`}
                     >
                       <ArrowRight className="w-4 h-4" />
                     </a>
