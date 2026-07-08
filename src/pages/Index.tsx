@@ -89,7 +89,7 @@ const beneficios = [
 
 const Logos = () => (
   <div className="flex items-center gap-3">
-    <img src={esportLogo} alt="Esport Motor" className="h-10 w-auto" />
+    <img src={esportLogo} alt="Esport Motor" className="h-10 w-auto" width={120} height={40} />
     <span className="h-8 w-px bg-border" />
   </div>
 );
@@ -224,6 +224,8 @@ const Index = () => {
               alt="Honda Hornet 750"
               fetchPriority="high"
               className="relative w-full max-w-2xl mx-auto drop-shadow-[0_25px_45px_rgba(193,37,42,0.2)]"
+              width={800}
+              height={600}
             />
             <div className="absolute bottom-8 left-4 bg-primary/80 text-primary-foreground px-4 py-2 font-display text-sm tracking-widest -rotate-3 shadow-[0_4px_12px_rgba(193,37,42,0.2)]">
               Hornet 750
@@ -337,6 +339,8 @@ const Index = () => {
                       alt={m.nome}
                       loading="lazy"
                       className="relative w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                      width={400}
+                      height={300}
                     />
                   </div>
                   <div className="p-5 border-t border-border flex items-center justify-between">
