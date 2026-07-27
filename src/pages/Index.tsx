@@ -116,19 +116,19 @@ const Index = () => {
       </div>
 
       {/* Header */}
-<header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
-  <div className="container flex items-center justify-between h-20">
-    <a
-      href="#"
-      aria-label="Ir para o topo da página"
-      className="flex items-center gap-3"
-    >
-      <Logos />
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
+        <div className="container flex items-center justify-between h-20">
+          <a
+            href="#"
+            aria-label="Ir para o topo da página"
+            className="flex items-center gap-3"
+          >
+            <Logos />
 
-      <span className="text-lg font-semibold text-foreground">
-        Rio Claro
-      </span>
-    </a>
+            <span className="text-lg font-semibold text-foreground">
+              Rio Claro
+            </span>
+          </a>
 
     <nav
       aria-label="Navegação"
