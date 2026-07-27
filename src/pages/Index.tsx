@@ -14,6 +14,7 @@ import {
 import esportLogo from "@/assets/logo-esport-motor.png";
 
 const WA_MAIN = "551935229200"; // Rio Claro (principal)
+const WA_RC = "551935229200"; // Rio Claro (alias)
 const WA_SC = "551633683060"; // São Carlos
 
 const motos = [
