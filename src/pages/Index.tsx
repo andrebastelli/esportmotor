@@ -116,19 +116,19 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
-        <div className="container flex items-center justify-between h-20">
-          <a
-            href="#"
-            aria-label="Ir para o topo da página"
-            className="flex items-center gap-3"
-          >
-            <Logos />
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
+      <div className="container flex items-center justify-between h-20">
+        <a
+          href="#"
+          aria-label="Ir para o topo da página"
+          className="flex items-center gap-3"
+        >
+          <Logos />
 
-            <span className="text-lg font-semibold text-foreground">
-              Rio Claro
-            </span>
-          </a>
+          <span className="text-lg font-semibold text-foreground">
+            Rio Claro
+          </span>
+        </a>
 
     <nav
       aria-label="Navegação"
@@ -183,7 +183,7 @@ const Index = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
               Selecione o modelo, escolha o plano e parcele <strong className="text-primary">SEM JUROS</strong> com a
-              Esport Motor — concessionária Honda oficial em Rio Claro e São Carlos.
+              Esport Motor — concessionária Honda oficial em Rio Claro.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -251,7 +251,7 @@ const Index = () => {
               "+30 Anos",
               "Seguro Incluso",
               "Planos Flexíveis",
-              "Rio Claro · São Carlos",
+              "Rio Claro · Honda",
               "Simule pelo WhatsApp",
             ].map((t, i) => (
               <span key={`${k}-${i}`} className="flex items-center gap-12">
@@ -569,7 +569,7 @@ const Index = () => {
         <div className="container py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <Logos />
           <p className="text-xs text-muted-foreground uppercase tracking-widest">
-            Consórcio Honda · Rio Claro · São Carlos
+            Consórcio Honda · Rio Claro
           </p>
           <div className="flex items-center gap-3">
             <a
