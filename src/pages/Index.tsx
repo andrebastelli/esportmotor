@@ -13,9 +13,8 @@ import {
 } from "lucide-react";
 import esportLogo from "@/assets/logo-esport-motor.png";
 
-const WA_MAIN = "551938647080";
-const WA_RC = "551935229200";
-const WA_SC = "551633683060";
+const WA_MAIN = "551935229200"; // Rio Claro (principal)
+const WA_SC = "551633683060"; // São Carlos
 
 const motos = [
   {
@@ -65,13 +64,13 @@ const beneficios = [
     n: "01",
     icon: Zap,
     title: "Zero Juros",
-    text: "Apenas taxa de administração. Muito mais econômico que financiamento tradicional.",
+    text: "Apenas taxa de administração. Muito mais econômico.",
   },
   {
     n: "02",
     icon: ShieldCheck,
     title: "Seguro Incluso",
-    text: "Seguro Prestamista para sua tranquilidade total ao acelerar.",
+    text: "Planos com Seguro Prestamista incluso.",
   },
   {
     n: "03",
@@ -82,7 +81,7 @@ const beneficios = [
   {
     n: "04",
     icon: Award,
-    title: "Honda Oficial",
+    title: "Honda",
     text: "Concessionária autorizada com mais de 30 anos rasgando asfalto.",
   },
 ];
@@ -202,7 +201,7 @@ const Index = () => {
             <dl className="grid grid-cols-3 gap-6 mt-12 max-w-lg">
               {[
                 { v: "+30", l: "Anos no mercado", c: "primary" },
-                { v: "100%", l: "Honda oficial", c: "blue" },
+                { v: "100%", l: "Honda", c: "blue" },
                 { v: "0%", l: "Juros", c: "primary" },
               ].map((s) => (
                 <div
@@ -244,7 +243,7 @@ const Index = () => {
             {[
               "Sem Juros",
               "Sem Entrada",
-              "Honda Oficial",
+              "Honda",
               "+30 Anos",
               "Seguro Incluso",
               "Planos Flexíveis",
@@ -504,7 +503,7 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { cidade: "Rio Claro / SP", end: "Rua 14, 289 - Consolação", tel: "(19) 3522-9200", wa: WA_RC, accent: "primary" },
+              { cidade: "Rio Claro / SP", end: "Rua 14, 289 - Consolação", tel: "(19) 3522-9200", wa: WA_MAIN, accent: "primary" },
               {
                 cidade: "São Carlos / SP",
                 end: "Av. São Carlos, 736 - Vila Lutfalla",
@@ -543,7 +542,11 @@ const Index = () => {
                     </li>
                   </ul>
                   <a
-                    href={`https://api.whatsapp.com/send?phone=${l.wa}`}
+                    href={
+                      l.cidade.includes("São Carlos")
+                        ? "https://api.whatsapp.com/send?phone=551633683060&text=Ol%C3%A1,%20pode%20me%20ajudar?"
+                        : `https://api.whatsapp.com/send?phone=${WA_MAIN}`
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`mt-6 inline-flex items-center gap-2 ${accentBg} text-white px-5 py-3 font-bold uppercase tracking-wider text-sm ${accentShadow} transition-all relative`}
