@@ -65,13 +65,13 @@ const beneficios = [
     n: "01",
     icon: Zap,
     title: "Zero Juros",
-    text: "Apenas taxa de administração. Muito mais econômico que financiamento tradicional.",
+    text: "Apenas taxa de administração. Muito mais econômico.",
   },
   {
     n: "02",
     icon: ShieldCheck,
     title: "Seguro Incluso",
-    text: "Seguro Prestamista para sua tranquilidade total ao acelerar.",
+    text: "Planos com Seguro Prestamista incluso.",
   },
   {
     n: "03",
