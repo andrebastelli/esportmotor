@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
-import IndexTtq from "./pages/IndexTtq.tsx";
+import TiktokIndex from "./pages/tiktok/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -18,7 +18,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="/ttq" element={<IndexTtq />} />
+          <Route path="/ttq" element={<TiktokIndex />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
