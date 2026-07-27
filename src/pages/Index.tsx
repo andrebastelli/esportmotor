@@ -82,7 +82,7 @@ const beneficios = [
   {
     n: "04",
     icon: Award,
-    title: "Honda Oficial",
+    title: "Honda",
     text: "Concessionária autorizada com mais de 30 anos rasgando asfalto.",
   },
 ];
@@ -202,7 +202,7 @@ const Index = () => {
             <dl className="grid grid-cols-3 gap-6 mt-12 max-w-lg">
               {[
                 { v: "+30", l: "Anos no mercado", c: "primary" },
-                { v: "100%", l: "Honda oficial", c: "blue" },
+                { v: "100%", l: "Honda", c: "blue" },
                 { v: "0%", l: "Juros", c: "primary" },
               ].map((s) => (
                 <div
@@ -244,7 +244,7 @@ const Index = () => {
             {[
               "Sem Juros",
               "Sem Entrada",
-              "Honda Oficial",
+              "Honda",
               "+30 Anos",
               "Seguro Incluso",
               "Planos Flexíveis",
